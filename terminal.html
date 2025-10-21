@@ -7,9 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal Interface</title>
+    <title>Anytermy</title>
     <style>
 
         @font-face {
@@ -26,6 +29,12 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: 'Monocraft';
+            src: url('https://github.com/IdreesInc/Monocraft/releases/download/v4.1/Monocraft-no-ligatures.ttc') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
         * {
             margin: 0;
@@ -96,7 +105,7 @@
 <body>
     <div class="terminal">
         <div class="output" id="output">
-            <div class="output-line">ANYTERMY - Anyhows Terminal Service<br>Run FUNCTION WELCOME if you dont know what to do!<br>(c) Anyhows Corporation. All rights reserved.</div>
+            <div class="output-line">ANYTERMY 0.2 [Substitutes Update]- Anyhows Terminal Service<br>Run FUNCTION WELCOME if you dont know what to do!<br>(c) Anyhows Corporation. All rights reserved.</div>
         </div>
         <div class="input-line">
             <span class="prompt">$</span>
@@ -106,6 +115,7 @@
 
     <script>
         function applyTheme(themeName) {
+            // the css is ai generated for the most part sorry
             const styles = {
     'default': `
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -214,7 +224,7 @@
         body { 
             background-color: #f8f9fa; 
             color: #000000; 
-            font-family: 'Doto'; 
+            font-family: 'Doto';
             font-weight: 800;
             height: 100vh; 
             overflow: hidden; 
@@ -281,105 +291,9 @@
         .output::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 4px; border: 1px solid #e2e8f0; }
         .output::-webkit-scrollbar-thumb:hover { background: #a0aec0; }
     `,
-    'rainbow': `
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: #000000; 
-            color: #ffffff; 
-            font-family: 'Courier New', monospace; 
-            height: 100vh; 
-            overflow: hidden; 
-            padding: 20px;
-        }
-        .terminal { 
-            height: 100%; 
-            display: flex; 
-            flex-direction: column; 
-        }
-        .output { 
-            flex: 1; 
-            overflow-y: auto; 
-            padding-bottom: 10px;
-        }
-        .input-line { 
-            display: flex; 
-            align-items: center; 
-        }
-        .prompt { 
-            margin-right: 10px; 
-            animation: rainbow-prompt 2s linear infinite;
-        }
-        #command-input { 
-            background: transparent; 
-            border: none; 
-            color: #ffffff; 
-            font-family: 'Courier New', monospace; 
-            font-size: 16px; 
-            outline: none; 
-            flex: 1;
-        }
-        .output-line { 
-            margin-bottom: 5px; 
-            white-space: pre-wrap;
-        }
-        /* Link styling */
-        a { 
-            animation: rainbow-text 3s linear infinite; 
-            text-decoration: underline;
-        }
-        a:hover { 
-            text-decoration: none;
-            animation-duration: 1s;
-        }
-        /* Individual letter animation */
-        .rainbow-char {
-            display: inline-block;
-            animation: rainbow-char 1.5s linear infinite;
-            animation-delay: calc(var(--char-index) * 0.1s);
-        }
-        /* Scrollbar styling */
-        .output::-webkit-scrollbar { width: 10px; }
-        .output::-webkit-scrollbar-track { background: #000000; }
-        .output::-webkit-scrollbar-thumb { 
-            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0080ff, #0000ff, #8000ff);
-            border-radius: 5px; 
-            animation: rainbow-scroll 2s linear infinite;
-        }
-        /* Keyframe animations */
-        @keyframes rainbow-text {
-            0% { color: #ff0000; }
-            16% { color: #ffff00; }
-            33% { color: #00ff00; }
-            50% { color: #00ffff; }
-            66% { color: #0000ff; }
-            83% { color: #ff00ff; }
-            100% { color: #ff0000; }
-        }
-        @keyframes rainbow-char {
-            0% { color: #ff0000; transform: translateY(0px); }
-            16% { color: #ffff00; transform: translateY(-2px); }
-            33% { color: #00ff00; transform: translateY(0px); }
-            50% { color: #00ffff; transform: translateY(2px); }
-            66% { color: #0000ff; transform: translateY(0px); }
-            83% { color: #ff00ff; transform: translateY(-2px); }
-            100% { color: #ff0000; transform: translateY(0px); }
-        }
-        @keyframes rainbow-prompt {
-            0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
-            16% { color: #ffff00; text-shadow: 0 0 10px #ffff00; }
-            33% { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
-            50% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
-            66% { color: #0000ff; text-shadow: 0 0 10px #0000ff; }
-            83% { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
-            100% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
-        }
-        @keyframes rainbow-scroll {
-            0% { background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0080ff, #0000ff, #8000ff); }
-            100% { background: linear-gradient(405deg, #ff0000, #ff8000, #ffff00, #00ff00, #0080ff, #0000ff, #8000ff); }
-        }
-    `
 };
 
+            
             const existingStyle = document.getElementById('dynamic-theme');
             if (existingStyle) {
                 existingStyle.remove();
@@ -540,6 +454,9 @@ const beeSpecies = {
     "withered": "This bee hasn't been documented yet. Please join the Discord Server by running \"DISCORD\" if you wish to contribute to \"BEE SPECIES\""
 };
     
+        function empty() {
+        }
+
         function singleplayer() {
             if (typeof fancymenu !== 'undefined') {
                 fancymenu.execute('opengui', 'select_world_screen');
@@ -651,65 +568,85 @@ const beeSpecies = {
         let historyIndex = -1;
 
         function evaluateExpression(expr) {
-                expr = expr.toLowerCase().replace(/\s+/g, '');
-    
-                expr = expr.replace(/pi/g, Math.PI.toString());
-                expr = expr.replace(/e/g, Math.E.toString());
-    
-                expr = expr.replace(/\^/g, '**');
-    
-                const safeEval = (str) => {
-                    const allowed = /^[0-9+\-*/().\s,]+$/;
-                    const functionCalls = str.match(/(sqrt|log|ln|sin|cos|tan|abs)\(([^)]+)\)/g);
-        
-                    if (functionCalls) {
-                        functionCalls.forEach(call => {
-                            const match = call.match(/(sqrt|log|ln|sin|cos|tan|abs)\(([^)]+)\)/);
-                            if (match) {
-                                const func = match[1];
-                                const innerValue = safeEval(match[2]);
-                                let result;
+            expr = expr.toLowerCase().replace(/\s+/g, '');
+            
+            expr = expr.replace(/pi/g, Math.PI.toString());
+            expr = expr.replace(/e/g, Math.E.toString());
+            
+            expr = expr.replace(/\^/g, '**');
+            
+            let lastExpr = '';
+            while (expr !== lastExpr) {
+                lastExpr = expr;
+                
+                const functionMatch = expr.match(/(sqrt|log|ln|sin|cos|tan|abs)\(([^()]*)\)/);
+                
+                if (functionMatch) {
+                    const func = functionMatch[1];
+                    const innerExpr = functionMatch[2];
                     
-                                switch(func) {
-                                    case 'sqrt': result = Math.sqrt(innerValue); break;
-                                    case 'log': result = Math.log10(innerValue); break;
-                                    case 'ln': result = Math.log(innerValue); break;
-                                    case 'sin': result = Math.sin(innerValue); break;
-                                    case 'cos': result = Math.cos(innerValue); break;
-                                    case 'tan': result = Math.tan(innerValue); break;
-                                    case 'abs': result = Math.abs(innerValue); break;
-                                            }
-                    
-                                str = str.replace(call, result.toString());
-                            }
-                        });
+                    if (innerExpr.match(/(sqrt|log|ln|sin|cos|tan|abs)\(/)) {
+                        continue;
                     }
-        
-        if (!allowed.test(str.replace(/[0-9]/g, ''))) {
-            throw new Error('Invalid characters in expression');
+                    
+                    const innerValue = evaluateExpression(innerExpr);
+                    let result;
+                    
+                    switch(func) {
+                        case 'sqrt': result = Math.sqrt(innerValue); break;
+                        case 'log': result = Math.log10(innerValue); break;
+                        case 'ln': result = Math.log(innerValue); break;
+                        case 'sin': result = Math.sin(innerValue); break; 
+                        case 'cos': result = Math.cos(innerValue); break;
+                        case 'tan': result = Math.tan(innerValue); break;
+                        case 'abs': result = Math.abs(innerValue); break;
+                        default: result = innerValue;
+                    }
+                    
+                    expr = expr.replace(functionMatch[0], result.toString());
+                }
+            }
+            
+            const allowed = /^[0-9+\-*/().e]+$/;
+            if (!allowed.test(expr)) {
+                throw new Error('Invalid characters in expression ' + expr);
+            }
+            
+            try {
+                const result = Function(`"use strict"; return (${expr})`)();
+
+                if (!isFinite(result)) {
+                    if (isNaN(result)) return 'NaN';
+                    if (result === Infinity) return '∞';
+                    if (result === -Infinity) return '-∞';
+                }
+                return Math.abs(result) < 1e-10 ? 0 : parseFloat(result.toFixed(10));
+            } catch (error) {
+                throw new Error('Invalid expression syntax');
+            }
         }
-        
-        return Function(`"use strict"; return (${str})`)();
-    };
-    
-    const result = safeEval(expr);
-    
-    if (!isFinite(result)) {
-        if (isNaN(result)) return 'NaN';
-        if (result === Infinity) return '∞';
-        if (result === -Infinity) return '-∞';
-    }
-    
-    return Math.abs(result) < 1e-10 ? 0 : parseFloat(result.toFixed(10));
-}
 
     const presetFunctions = {
         'welcome': function() {
-            processCommand('countdown 5 -silent -norun text "Welcome to the" -align center -size 60 -font Minecraft -color white -padding 600 0 5 0 -and text ANYTERMY! -align center -size 90 -font Minecraft -color white -padding 0 0 50 0 -weight 900 -and image https://raw.githubusercontent.com/bluffcon/anyhows/refs/heads/main/anyhows_title.png 60 -center -and text "This terminal is a fun playtoy and also an ingame wiki! Good job on checking it out! This is a welcome sequence, but this is actually running commands available to you too!" -font minecraft -size 20 -color white -align center -and -| countdown 4 -norun -silent -hide echo -and echo -and text "You can easily retrieve information about different bee species here," -font minecraft -size 20 -color white -align center -and bee list -and text "change your themes," -font minecraft -size 20 -color white -align center -and themes -and text "and much much more!" -font minecraft -size 20 -color white -align center -and help -and -| countdown 3 -hide -norun -silent text "Have fun!" -font Minecraft -size 50 -color white');
+            processCommand('countdown 5 -silent -norun text " " -padding 600 0 0 0 -and text "Welcome to the" -align center -size 60 -font Minecraft -color white -bg black -and text ANYTERMY! -align center -size 90 -font Minecraft -bg black -color white -weight 900 -and image https://raw.githubusercontent.com/bluffcon/anyhows/refs/heads/main/anyhows_title.png 60 -center -and text -bg black "This terminal is a fun playtoy and also an ingame wiki! Good job on checking it out! This is a welcome sequence, but this is actually running commands available to you too!" -font minecraft -size 20 -color white -bg black -align center -and -| countdown 4 -norun -silent -hide echo -and echo -and text "You can easily retrieve information about different bee species here," -bg black -font minecraft -size 20 -color white -align center -and bee list -and text "change your themes," -bg black -font minecraft -size 20 -color white -align center -and themes -and text -bg black "and much much more!" -font minecraft -size 20 -color white -align center -and help -and -| countdown 3 -hide -norun -silent text "Have fun!" -font Minecraft -size 50');
+        },
+        'butcher-vanity': function() {
+            processCommand(`countdown 0 -hide -norun -silent text "Butcher Vanity" -font minecraft -weight bold -size 80 -align center -and text "by FLAVOR FOLEY" -font minecraft -size 50 -align center -and echo -and image https://raw.githubusercontent.com/bluffcon/anyhows/refs/heads/main/butchervanity.png 30 -center -and link "watch this on youtube! send this function again, and then immediately play the music video to sync" -size 15 -link https://www.youtube.com/watch?v=vjBFftpQxxM -align center -and -| countdown 1 -hide -norun -silent text "They say my hunger's a problem" -font minecraft -size 30 -align center -and text "They tell me to curb my appetite" -font minecraft -size 30 -align center -and text "They say I can't keep myself from trying" -font minecraft -size 30 -align center -and text "A bite of every plate in sight" -font minecraft -size 30 -align center -and -| countdown 12 -hide -norun -silent echo -and text "They worship patience, a virtue" -font minecraft -size 30 -align center -and text "Oh, they tell me gluttony's a sin" -font minecraft -size 30 -align center -and text "But my desire, it's bottomless" -font minecraft -size 30 -align center -and text "I wanna slit your throat and eat 'til I get sick" -font minecraft -size 30 -align center -and -| countdown 13 -hide -norun -silent echo -and text "The slaughter's on" -font minecraft -size 30 -align center -and text "I'd love to see you come undone" -font minecraft -size 30 -align center -and text "Unsatisfied, until I've got you flayed alive" -font minecraft -size 30 -align center -and -| countdown 5 -hide -norun -silent echo -and text "So grab a plate, have a taste" -font minecraft -size 30 -align center -and text 這口味讓我陶醉 -font minecraft -size 30 -align center -and text "I'm still preying on a butcher's vein" -font minecraft -size 30 -align center -and -| countdown 10 -hide -norun -silent echo -and text "To truss you up in pretty patterns" -font minecraft -size 30 -align center -and text "Oh, to dress your flesh up in the works" -font minecraft -size 30 -align center -and text "Perfectly portioned by a dagger" -font minecraft -size 30 -align center -and text "Serving the finest leftover dessert" -font minecraft -size 30 -align center -and -| countdown 12 -hide -norun -silent echo -and text "Why would I desecrate a carcass?" -font minecraft -size 30 -align center -and text "Oh, why let the offal go to waste?" -font minecraft -size 30 -align center -and text "It's love that guides my cleaver with such tenderness" -font minecraft -size 30 -align center -and text "A perfect strike to fix the horror on your face" -font minecraft -size 30 -align center -and -| countdown 13 -hide -norun -silent echo -and text "The slaughter's mine" -font minecraft -size 30 -align center -and text "Oh, blood and viscera divine" -font minecraft -size 30 -align center -and text "Preserved and primed" -font minecraft -size 30 -align center -and text "Each muscle divvied up to dine" -font minecraft -size 30 -align center -and -| countdown 5 -hide -norun -silent echo -and text "And in the high, 我存在" -font minecraft -size 30 -align center -and text "Tasting 血淋淋的愛" -font minecraft -size 30 -align center -and text "I'll devour all of you in time" -font minecraft -size 30 -align center -and -| countdown 6 -hide -norun -silent echo -and text "Oh, your heart" -font minecraft -size 30 -align center -and text "Aortic work of art" -font minecraft -size 30 -align center -and text "My love, my knife" -font minecraft -size 30 -align center -and text "To carve it out, your life" -font minecraft -size 30 -align center -and -| countdown 5 -hide -norun -silent echo -and text "So grab a plate, have a taste" -font minecraft -size 30 -align center -and text 這口味讓我陶醉 -font minecraft -size 30 -align center -and text "I'm still preying on a butcher's vein" -font minecraft -size 30 -align center -and -| countdown 6 -hide -norun -silent echo -and text "To snap the sinew, I want" -font minecraft -size 30 -align center -and text "To get within you, I want" -font minecraft -size 30 -align center -and text "To not forgive you" -font minecraft -size 30 -align center -and text "Rigor mortis, mold and mildew" -font minecraft -size 30 -align center -and -| countdown 5 -hide -norun -silent echo -and text "But dear, you should be grateful" -font minecraft -size 30 -align center -and text "That I won't waste a good meal" -font minecraft -size 30 -align center -and text "That all my love's precision" -font minecraft -size 30 -align center -and text "Carves a cut to simply die for" -font minecraft -size 30 -align center -and -| countdown 7 -hide -norun -silent echo -and text "To snap the sinew, I want" -font minecraft -size 30 -align center -and text "To get within you, I want" -font minecraft -size 30 -align center -and text "To scar the tissue" -font minecraft -size 30 -align center -and text "Butterfly and rectify you" -font minecraft -size 30 -align center -and -| countdown 4 -hide -norun -silent echo -and text "I need to be your afterlife" -font minecraft -size 30 -align center -and text "Eucharist, I deify" -font minecraft -size 30 -align center -and text "God, oh, fuck the fork and knife" -font minecraft -size 30 -align center -and text "I'll rip in hands and teeth and take a bite!" -font minecraft -size 30 -align center -and -| countdown 6 -hide -norun -silent echo -and text teehehe -font minecraft -size 30 -align center -and -| countdown 10 -hide -norun -silent echo -and text "The slaughter's on" -font minecraft -size 30 -align center -and text "I'd love to see you come undone" -font minecraft -size 30 -align center -and text "Unsatisfied, until I've got you flayed alive" -font minecraft -size 30 -align center -and -| countdown 5 -hide -norun -silent echo -and text "So grab a plate, have a taste" -font minecraft -size 30 -align center -and text 這口味讓我陶醉 -font minecraft -size 30 -align center -and text "I'm still preying on a butcher's vein" -font minecraft -size 30 -align center -and -| countdown 6 -hide -norun -silent echo -and text "And now the slaughter's mine" -font minecraft -size 30 -align center -and text "My darling, get under the knife" -font minecraft -size 30 -align center -and text "Your broken pride" -font minecraft -size 30 -align center -and text "A cut so perfect in its prime" -font minecraft -size 30 -align center -and -| countdown 6 -hide -norun -silent echo -and text "All that I see, 63" -font minecraft -size 30 -align center -and text 為讓我心醉的你 -font minecraft -size 30 -align center -and text "I'll be waiting, so impatiently" -font minecraft -size 30 -align center -and -| countdown 6 -hide -norun -silent echo -and text "Oh, your heart" -font minecraft -size 30 -align center -and text "Aortic work of art" -font minecraft -size 30 -align center -and text "My love, my knife" -font minecraft -size 30 -align center -and text "To carve it out, your life" -font minecraft -size 30 -align center -and -| countdown 5 -hide -norun -silent echo -and text "So grab a plate, have a taste" -font minecraft -size 30 -align center -and text 這口味讓我陶醉 -font minecraft -size 30 -align center -and text "I'm still preying on a butcher's vein" -font minecraft -size 30 -align center -and -| countdown 17 -hide -norun -silent echo -and text "Still praying, hopeless and in vain" -font minecraft -size 30 -align center -and echo made by bluffcon as a part of the "original anytermy experience" whatever that means. i dont regret listening to this song for an hour to make this`)
         }
     };
 
-    // matrix animation variables
+    const silentPresetFunctions = {};
+
+    for (const [name, func] of Object.entries(presetFunctions)) {
+        silentPresetFunctions[name] = function() {
+            const originalProcessCommand = processCommand;
+            processCommand = silentProcessCommand;
+            const result = func();
+            processCommand = originalProcessCommand;
+            return result;
+        };
+    }
+
     let matrixInterval;
     let isMatrixActive = false;
 
@@ -722,7 +659,6 @@ const beeSpecies = {
         
         commandInput.style.display = 'none';
         
-        // matrix characters
         const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
         
         const canvas = document.createElement('canvas');
@@ -741,7 +677,7 @@ const beeSpecies = {
         const fontSize = 14;
         const columns = Math.floor(canvas.width / fontSize);
         const drops = Array(columns).fill(1);
-        // ai generated no clue how this works LMAO
+
         function drawMatrix() {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -774,7 +710,7 @@ const beeSpecies = {
                 commandInput.focus();
                 isMatrixActive = false;
                 document.removeEventListener('keydown', exitMatrix);
-                addOutput('Exited Matrix mode');
+                addOutput('Exited Matrix');
             }
         }
         
@@ -791,6 +727,71 @@ const beeSpecies = {
             startMatrixAnimation();
         }
     });
+
+    function substituteVariables(input) {
+        const noteValue = localStorage.getItem('terminal-note');
+        
+        let output = input;
+        
+        if (noteValue && output.includes('%.note%')) {
+            output = output.replace(/%.note%/g, noteValue);
+        }
+        
+        if (output.includes('%.time%')) {
+            output = output.replace(/%.time%/g, new Date().toLocaleTimeString());
+        }
+        
+        if (output.includes('%.date%')) {
+            output = output.replace(/%.date%/g, new Date().toLocaleDateString());
+        }
+        if (output.includes('%.minutes%')) {
+            output = output.replace(/%.minutes%/g, new Date().getMinutes());
+        }
+        if (output.includes('%.hours%')) {
+            output = output.replace(/%.hours%/g, new Date().getHours());
+        }
+        if (output.includes('%.seconds%')) {
+            output = output.replace(/%.seconds%/g, new Date().getSeconds());
+        }
+        if (output.includes('%.milliseconds%')) {
+            output = output.replace(/%.milliseconds%/g, new Date().getMilliseconds());
+        }
+        if (output.includes('%.year%')) {
+            output = output.replace(/%.year%/g, new Date().getFullYear());
+        }
+        if (output.includes('%.weekday%')) {
+            output = output.replace(/%.weekday%/g, new Date().getDay());
+        }
+        if (output.includes('%.day%')) {
+            output = output.replace(/%.day%/g, new Date().getDate());
+        }
+        if (output.includes('%.month%')) {
+            output = output.replace(/%.month%/g, new Date().getMonth());
+        }
+        if (output.includes('%.monthname%')) {
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                            "July", "August", "September", "October", "November", "December"];
+            const currentMonth = monthNames[new Date().getMonth()];
+            output = output.replace(/%.monthname%/g, currentMonth);
+        }
+
+        if (output.includes('%.theme%')) {
+            const currentTheme = localStorage.getItem('terminal-theme') || 'default';
+            output = output.replace(/%.theme%/g, currentTheme);
+        }
+        if (output.includes('%.random%')) {
+            output = output.replace(/%.random%/g, Math.random());
+        }
+        if (output.includes('%.random100%')) {
+            output = output.replace(/%.random100%/g, Math.round(Math.random() * (100 - 1) + 1));
+        }
+        if (output.includes('%.pi%')) {
+            output = output.replace(/%.pi%/g, Math.PI);
+        }
+        
+        
+        return output;
+    }
 
         const commands = {
             cheatcode: {
@@ -815,11 +816,14 @@ const beeSpecies = {
                             `DISCORD         ${commands.discord.description}\n` +
                             `ECHO            ${commands.echo.description}\n` +
                             `EXIT            ${commands.exit.description}\n` +
+                            `FUNCTION        ${commands.function.description}\n` +
+                            `FONTS           ${commands.fonts.description}\n` +
                             `HELP            ${commands.help.description}\n` +
                             `IMAGE           ${commands.image.description}\n` +
                             `LOWER           ${commands.lower.description}\n` +
                             `MATRIX          ${commands.matrix.description}\n` +
                             `NOTE            ${commands.note.description}\n` +
+                            `SUBSTITUTE      ${commands.substitute.description}\n` +
                             `OPEN            ${commands.open.description}\n` +
                             `P               ${commands.p.description}\n` +
                             `QUIT            ${commands.quit.description}\n` +
@@ -866,7 +870,6 @@ const beeSpecies = {
                 description: 'Displays messages, or turns command-echoing on or off',
                 execute: function(args) {
                     if (args.length === 0) {
-                        // Insert empty line
                         addOutput('\n');
                         return;
                     }
@@ -877,28 +880,55 @@ const beeSpecies = {
                 description: 'Displays messages, or turns command-echoing on or off',
                 execute: function(args) {
                     if (args.length === 0) {
-                        // Insert empty line
                         addOutput('');
                         return;
                     }
                     return args.join(' ');
                 }
             },
+            skull: {
+                description: 'skull',
+                execute: function(args) {
+                    silentProcessCommand('image https://raw.githubusercontent.com/bluffcon/anyhows/refs/heads/main/skull.gif 100');
+                    return;
+                }
+            },
             'function': {
-                description: 'Execute preset command sequences',
+                description: 'Execute globally preset command sequences',
                 execute: function(args) {
                     if (args.length === 0) {
-                        return `Available functions: ${Object.keys(presetFunctions).join(', ')}\nUsage: function <name>`;
+                        return `Available functions: ${Object.keys(presetFunctions).join(', ')}\nUsage: function <name> [-show]`;
                     }
                     
+                    const showCommands = args.includes('-show');
                     const functionName = args[0].toLowerCase();
-                    const presetFunction = presetFunctions[functionName];
+                    // if show, do preset if no show do silent
+                    const functions = showCommands ? presetFunctions : silentPresetFunctions;
                     
-                    if (presetFunction) {
-                        return presetFunction();
-                    } else {
-                        return `Function "${functionName}" not found. Available: ${Object.keys(presetFunctions).join(', ')}`;
+                    if (functions[functionName]) {
+                        return functions[functionName]();
                     }
+                    
+                    return `Function "${functionName}" not found. Available: ${Object.keys(presetFunctions).join(', ')}`;
+                }
+            },
+            fonts: {
+                description: 'Lists all available fonts',
+                execute: function(args) {
+                    return `Here are all of the available fonts! You can use them in the P, LINK, TEXT commands
+
+    Google Sans Mono
+    Azaret Mono
+    Cutive Mono
+    Nova Mono
+    Doto (supports all weights)
+    Workbench
+    Minecraft (supports bold)
+    Monocraft
+    DynaPuff
+
+It's recommended to use the above fonts because some users might not have common system fonts!
+The above are always shipped with the Anytermy!`;
                 }
             },
             exit: {
@@ -931,10 +961,27 @@ const beeSpecies = {
                     return 'Entering the Matrix...';
                 }
             },
+
+            calc: {
+                description: 'Calculates an expression and displays the result',
+                execute: function(args) {
+                    if (args.length === 0) {
+                        return 'Usage: calc <expression>\nSupported: + - * / ^ sqrt() log() ln() sin() cos() tan() pi e';
+                    }
+                    try {
+                        const expression = substituteVariables(args.join(' '));
+                        const result = evaluateExpression(expression);
+                        return `${result}`;
+                    } catch (e) {
+                        return `Error: ${e.message}`;
+                    }
+                }
+            },
+            
             discord: {
                 description: 'Displays the Anyhows Discord invite link',
                 execute: function(args) {
-                    return `https://discord.gg/zkjyuGcguA \nRun DISCORD -F to open this in your browser`;
+                    silentProcessCommand(`countdown 0 -norun -silent link https://discord.gg/zkjyuGcguA -link https://discord.gg/zkjyuGcguA -and echo Run DISCORD -F to immediately open this in your browser`);
                 }
             },
             'discord -f': {
@@ -951,7 +998,17 @@ const beeSpecies = {
                 description: 'Change the terminal theme',
                 execute: function(args) {
                     if (args.length === 0) {
-                        return 'Not enough arguments!\nAvailable themes: \n                  default, \n                  dark-blue, \n                  matrix, \n                  solarized, \n                  modern, \n                  retro \n                  sleep\n                  rainbow\nUsage: theme <theme>';
+                        return `Not enough arguments!
+Available themes:
+        default        light-blue text on a black background
+        dark-blue      light-blue text on a dark-teal background
+        matrix         green text on a black background
+        solarized      gray text on a teal background + tall terminal
+        modern         white text on a rounded purple background
+        retro          white text on a bright blue background
+        sleep          black dotted text on a white background
+        orange         black text on a white background, looks like an orange
+Usage: theme <theme>`;
                     }
                     
                     const themeName = args[0].toLowerCase();
@@ -962,7 +1019,7 @@ const beeSpecies = {
             themes: {
                 description: 'Displays possible themes',
                 execute: function(args) {
-                    return `Available themes:\ndefault, dark-blue, matrix, solarized, modern, retro, sleep`;
+                    return `Available themes:\ndefault, dark-blue, matrix, solarized, modern, retro, sleep, orange`;
                 }
             },
             hello: {
@@ -971,45 +1028,102 @@ const beeSpecies = {
                     return `hey dude`;
                 }
             },
-            'note set': {
-                description: 'Set a note',
+            substitute: {
+                description: 'Displays all existing substitutes for commands',
                 execute: function(args) {
-                    if (args.length < 1) {
-                        return 'Not enough arguments!\nUsage: NOTE SET <value>\nExample: NOTE SET Hello me from the future';
-                    }
-                    
-                    const noteValue = args.join(' ');
-                    localStorage.setItem('terminal-note', noteValue);
-                    return `Note set: "${noteValue}"`;
+                    return `Substitutes are values that get dynamically replaced in commands
+They are replaced only after commands are parsed.
+Exceptions that receive substitutes before parsing: LOWER, UPPER, CALC, P, LINK, TEXT, IMAGE
+
+Substitutes can be used by putting %.SUBSTITUTE VALUE% anywhere in text
+Example: % . time % -> %.time% (works even inside my code!)
+
+All available substitutes:
+    note            Prints the current note contents, also can be shown when running just note
+    time            Current time in system format
+    date            Current date
+    day             Shows the day of th month
+    weekday         Shows the day of the week
+    year            Shows year
+    month           Shows month number
+    monthname       Shows month name
+    hours           Shows current hours
+    minutes         Shows current minutes
+    seconds         Shows current seconds
+    milliseconds    Okay this is getting ridiculous
+    theme           Current user theme`;
                 }
             },
+            meow: {
+                description: 'kiitycat meow moew kittycat cat cat',
+                execute: function(args) {
+                    return `'meow' is not recognized as a.. okay who am i kidding of course this exists`;
+                }
+            },
+            
+            'note set': {
+                description: 'Set a note, optionally from command output',
+                execute: function(args) {
+                    if (args.length < 1) {
+                        return `Not enough arguments!
+Usage:  note set <value>
+        note set -execute <command>
 
+Examples:
+    note set Hello from the future
+    note set -execute echo meow
+    
+Can be later retreived anywhere using note as a substitute (learn by using SUBSTITUTE)
+Everything is processed after being parsed, only CALC is the exception to support NOTEd calculations`;
+                    }
+        
+                    if (args[0] === '-execute') {
+                        if (args.length < 2) {
+                            return 'Error: -execute requires a command to run';
+                        }
+                        
+                        const commandToExecute = args.slice(1).join(' ');
+                        
+                        let capturedOutput = '';
+                        const originalAddOutput = addOutput;
+                        
+                        addOutput = function(text) {
+                            if (text && text !== '') {
+                                capturedOutput = text;
+                            }
+                        };
+                        
+                        processCommand(commandToExecute);
+                        
+                        addOutput = originalAddOutput;
+                        
+                        if (capturedOutput) {
+                            localStorage.setItem('terminal-note', capturedOutput);
+                            return ``;
+                        } else {
+                            return '';
+                        }
+                    } else {
+                        const noteValue = args.join(' ');
+                        localStorage.setItem('terminal-note', noteValue);
+                        return `Note set: "${noteValue}"`;
+                    }
+                }
+            },
+            
             note: {
-                description: 'Shows your saved note',
+                description: 'Shows saved note',
                 execute: function(args) {
                     const noteValue = localStorage.getItem('terminal-note');
                     if (noteValue) {
-                        return `${noteValue}\n\nSet a new note by running NOTE SET <note>`;
+                        return `${noteValue}\n\nSet a new note by running NOTE SET <note> or NOTE SET -execute <command>`;
                     } else {
                         return 'No note has been set. Use NOTE SET <note> to set one';
                     }
                 }
             },
-            calc: {
-                description: 'Calculates an expression and displays the result',
-                execute: function(args) {
-                    if (args.length === 0) {
-                        return 'Usage: calc <expression>\nSupported: + - * / ^ sqrt() log() ln() sin() cos() tan() pi e';
-                    }
-                try {
-                    const expression = args.join(' ');
-                    const result = evaluateExpression(expression);
-                        return `${result}`;
-                    } catch (e) {
-                        return `${e.message}`;
-                    }
-                }
-            },
+            
+            
             bee: {
                 description: 'Displays information on all bees, species, etc',
                 execute: function(args) {
@@ -1250,7 +1364,7 @@ const beeSpecies = {
                 description: 'Changes the link of the custom title screen backgrounds',
                 execute: function(args) {
                     if (args.length === 0) {
-                    return 'Not enough arguments!\nUsage: custombg path <link>\nExample: custombg path custombg/default.png\n\nCan be local, but the file:/// will be relative to .minecraft/config/fancymenu/assets/';
+                    return 'Not enough arguments!\nUsage: custombg link <link>\nExample: custombg link https://raw.githubusercontent.com/bluffcon/anyhows/refs/heads/main/butchervanity.png\n\nCan be local, but i have no clue where file:/// would be relative to\nDo NOT set your background to images from large social networks such as Twitter or Reddit, it WILL break, it WILL break your game, you WILL need to edit your variable database.\nOnly use RAW IMAGE FILES, that point to the image DIRECTLY. I recommend downloading your image and uploading it to GitHub or catbox.moe';
                     }
         
                     const path = args[0];
@@ -1268,24 +1382,25 @@ const beeSpecies = {
                 description: 'Display customizable text with size, font, color, background, outline, etc.',
                 execute: function(args) {
                     if (args.length === 0) {
-                        return `Not enough arguments!\nUsage: text <content> [options]
-            Options:
-            -size <px>                                         Font size (default: 16)
-            -font <name>                                       Font family
-            -color <hex/name>                                  Text color (default: current)
-            -bg <hex/name>                                     Background color
-            -outline <px> <color>                              Text outline
-            -margin <top> <right> <bottom> <left>              Margins
-            -padding <top> <right> <bottom> <left>             Padding
-            -align <left | center | right>                     Text alignment
-            -weight <100-900>                                  Font weight
-            -style <normal | italic | oblique>                 Font style
-            -decoration <underline | line-through | overline>  Text decoration
+                        return `Not enough arguments!
+Usage: text <content> [options]
+Options:
+    -size <px>                                         Font size (default: 16)
+    -font <name>                                       Font family
+    -color <hex/name>                                  Text color (default: current)
+    -bg <hex/name>                                     Background color
+    -outline <px> <color>                              Text outline
+    -margin <top> <right> <bottom> <left>              Margins
+    -padding <top> <right> <bottom> <left>             Padding
+    -align <left | center | right>                     Text alignment
+    -weight <100-900>                                  Font weight
+    -style <normal | italic | oblique>                 Font style
+    -decoration <underline | line-through | overline>  Text decoration
 
-            Examples:
-            text beebee -size 24 -color orange -bg black
-            text DUDE -font Arial -size 20 -color #ff0000 -outline 2 black
-            text "i love anyhows" -align center -size 18 -weight bold`;
+Examples:
+    text beebee -size 24 -color orange -bg black -font 'Cutive Mono'
+    text DUDE -font Arial -size 20 -color #ff0000 -outline 2 black
+    text "im in the terminal" -align center -size 18 -weight bold`;
                     }
 
                     let content = '';
@@ -1349,7 +1464,7 @@ const beeSpecies = {
                     }
 
                     const textElement = document.createElement('div');
-                    textElement.textContent = content;
+                    textElement.textContent = substituteVariables(content);
                     textElement.style.fontSize = options.size;
                     textElement.style.fontFamily = options.font;
                     textElement.style.color = options.color;
@@ -1379,22 +1494,150 @@ const beeSpecies = {
                     return;
                 }
             },
+            link: {
+                description: 'Display a customizable link',
+                execute: function(args) {
+                    if (args.length === 0) {
+                        return `Not enough arguments!
+Usage: link <mask> -link [url] [options]
+Options:
+    -link <url>                                        Link to open in the browser
+    -size <px>                                         Font size (default: 16)
+    -font <name>                                       Font family
+    -color <hex/name>                                  Text color (default: current)
+    -bg <hex/name>                                     Background color
+    -outline <px> <color>                              Text outline
+    -margin <top> <right> <bottom> <left>              Margins
+    -padding <top> <right> <bottom> <left>             Padding
+    -align <left | center | right>                     Text alignment
+    -weight <100-900>                                  Font weight
+    -style <normal | italic | oblique>                 Font style
+    -decoration <underline | line-through | overline>  Text decoration
+
+Examples:
+    link Join! -link https://discord.gg/ -bg red
+    link "create miracles, madam herta!" -color blueviolet -font DynaPuff -size 50 -link youtube.com
+    
+The outputted text will open in the browser, instead of replacing the terminal screen (which P cannot do)
+The link is clickable not only in the actualy text part, but the whole horizontal space it takes up, this can easily be observed with -bg red`;
+                    }
+
+                    let content = '';
+                    const options = {
+                        onclick: 'meow',
+                        size: '16px',
+                        font: 'inherit',
+                        color: 'inherit',
+                        bg: 'transparent',
+                        outline: '',
+                        margin: '5px 0',
+                        padding: '0',
+                        align: 'left',
+                        weight: 'normal',
+                        style: 'normal',
+                        decoration: 'underline'
+                    };
+
+                    let i = 0;
+                    while (i < args.length) {
+                        if (args[i].startsWith('"')) {
+                            let quotedContent = args[i].slice(1);
+                            i++;
+                            while (i < args.length && !args[i].endsWith('"')) {
+                                quotedContent += ' ' + args[i];
+                                i++;
+                            }
+                            if (i < args.length && args[i].endsWith('"')) {
+                                quotedContent += ' ' + args[i].slice(0, -1);
+                            }
+                            content = quotedContent;
+                        } else if (args[i] === '-link' && i + 1 < args.length) {
+                            options.onclick = args[++i]
+                        } else if (args[i] === '-size' && i + 1 < args.length) {
+                            options.size = args[++i] + 'px';
+                        } else if (args[i] === '-font' && i + 1 < args.length) {
+                            options.font = args[++i];
+                        } else if (args[i] === '-color' && i + 1 < args.length) {
+                            options.color = args[++i];
+                        } else if (args[i] === '-bg' && i + 1 < args.length) {
+                            options.bg = args[++i];
+                        } else if (args[i] === '-outline' && i + 2 < args.length) {
+                            options.outline = `${args[++i]}px ${args[++i]}`;
+                        } else if (args[i] === '-margin' && i + 4 < args.length) {
+                            options.margin = `${args[++i]}px ${args[++i]}px ${args[++i]}px ${args[++i]}px`;
+                        } else if (args[i] === '-padding' && i + 4 < args.length) {
+                            options.padding = `${args[++i]}px ${args[++i]}px ${args[++i]}px ${args[++i]}px`;
+                        } else if (args[i] === '-align' && i + 1 < args.length) {
+                            options.align = args[++i];
+                        } else if (args[i] === '-weight' && i + 1 < args.length) {
+                            options.weight = args[++i];
+                        } else if (args[i] === '-style' && i + 1 < args.length) {
+                            options.style = args[++i];
+                        } else if (args[i] === '-decoration' && i + 1 < args.length) {
+                            options.decoration = args[++i];
+                        } else if (content === '') {
+                            content = args[i];
+                        }
+                        i++;
+                    }
+
+                    const textElement = document.createElement('div');
+                    textElement.textContent = substituteVariables(content);
+                    textElement.style.fontSize = options.size;
+                    textElement.style.fontFamily = options.font;
+                    textElement.style.color = options.color;
+                    textElement.style.backgroundColor = options.bg;
+                    textElement.style.margin = options.margin;
+                    textElement.style.padding = options.padding;
+                    textElement.style.textAlign = options.align;
+                    textElement.style.fontWeight = options.weight;
+                    textElement.style.fontStyle = options.style;
+                    textElement.style.textDecoration = options.decoration;
+                    textElement.style.cursor = 'pointer';
+                    
+                    textElement.addEventListener('click', function() {
+                        if (options.onclick && typeof fancymenu !== 'undefined') {
+                            fancymenu.execute(
+                                'openlink', 
+                                options.onclick
+                            );
+                        }
+                    });
+
+                    if (options.outline) {
+                        textElement.style.textShadow = `
+                            ${options.outline} 0px 0px,
+                            ${options.outline} 0px 1px,
+                            ${options.outline} 1px 0px,
+                            ${options.outline} 1px 1px
+                        `;
+                    }
+
+                    const outputLine = document.createElement('div');
+                    outputLine.className = 'output-line';
+                    outputLine.appendChild(textElement);
+                    outputElement.appendChild(outputLine);
+                    outputElement.scrollTop = outputElement.scrollHeight;
+
+                    return;
+                }
+            },
             image: {
                 description: 'Displays an image from a URL with optional width, centering, and padding',
                 execute: function(args) {
                     if (args.length === 0) {
                         return `Not enough arguments!
-            Usage: IMAGE <url> [width] [options]
-            Options:
-            -center              Center the image horizontally
-            -padding <px>        Add padding around image
-            -padding <top> <right> <bottom> <left>  Custom padding
+Usage: IMAGE <url> [width] [options]
+Options:
+    -center              Center the image horizontally
+    -padding <px>        Add padding around image
+    -padding <top> <right> <bottom> <left>  Custom padding
 
-            Examples:
-            image https://example.com/image.png 75
-            image https://example.com/image.png 50 -center
-            image https://example.com/image.png 30 -padding 20
-            image https://example.com/image.png -center -padding 10 20 10 20`;
+Examples:
+    image https://example.com/image.png 75
+    image https://example.com/image.png 50 -center
+    image https://example.com/image.png 30 -padding 20
+    image https://example.com/image.png -center -padding 10 20 10 20`;
                     }
                     
                     const imageUrl = args[0];
@@ -1427,7 +1670,7 @@ const beeSpecies = {
                     }
                     
                     const imgElement = document.createElement('img');
-                    imgElement.src = imageUrl;
+                    imgElement.src = substituteVariables(imageUrl);
                     imgElement.alt = 'Invalid Image';
                     imgElement.style.maxHeight = '100%';
                     imgElement.style.maxWidth = `${widthPercent}%`;
@@ -1457,25 +1700,112 @@ const beeSpecies = {
                 }
             },
             'countdown': {
-                description: `Starts a countdown (min 1 second) and then executes commands after the countdown.
+                description: `Starts a countdown and then executes commands after the countdown.
 It has 5 flags and it is the most complicated command in the whole Anytermy.
 
     -hide        Hides the counting down animation
-        Usage: countdown 30 -hide
-    -norun       Runs commands not from the POV of the user
-        Usage: countdown -norun 2 countdown 2 echo hi
-    -silent      Hides all output and status messages other than the countdown and invocation
-        Usage: countdown 1 -silent -norun -hide help
+    -norun       Runs commands not from the POV of the user  
+    -silent      Hides all output and status messages
     -and         Appends a new command
-        Usage: countdown 1 echo -and echo
-    -|           Stops registering tags past this point. For when you have nested countdowns
-        Usage: countdown 1 echo -and -| countdown 2 -hide echo
+    -|           Stops registering tags past this point
         
 Syntax:
     countdown <seconds> [flags and commands]`,
                 execute: function(args) {
-                    const start = parseInt(args[0]) || 10;
-                    if (start < 0) return 'Only positive numbers';
+                    let start = parseInt(args[0]);
+                    if (isNaN(start)) start = 4;
+                    
+                    if (start <= 0) {
+                        start = 0;
+                        
+                        let hideOutput = false;
+                        let silentExecution = false;
+                        let noRunOutput = false;
+                        const commandsToExecute = [];
+                        let currentCommand = [];
+                        
+                        for (let i = 1; i < args.length; i++) {
+                            if (args[i] === '-|') {
+                                if (currentCommand.length > 0) {
+                                    commandsToExecute.push(currentCommand.join(' '));
+                                    currentCommand = [];
+                                }
+                                const remainingArgs = args.slice(i + 1);
+                                if (remainingArgs.length > 0) {
+                                    commandsToExecute.push(remainingArgs.join(' '));
+                                }
+                                break;
+                            } else if (args[i] === '-hide') {
+                                hideOutput = true;
+                            } else if (args[i] === '-silent') {
+                                silentExecution = true;
+                            } else if (args[i] === '-norun') {
+                                noRunOutput = true;
+                            } else if (args[i] === '-and') {
+                                if (currentCommand.length > 0) {
+                                    commandsToExecute.push(currentCommand.join(' '));
+                                    currentCommand = [];
+                                }
+                            } else {
+                                currentCommand.push(args[i]);
+                            }
+                        }
+                        
+                        if (currentCommand.length > 0) {
+                            commandsToExecute.push(currentCommand.join(' '));
+                        }
+                        
+                        if (commandsToExecute.length > 0) {
+                            const originalProcessCommand = processCommand;
+                            
+                            if (noRunOutput) {
+                                processCommand = function(input) {
+                                    const trimmedInput = input.trim();
+                                    const parts = trimmedInput.split(/\s+/);
+
+                                    let commandFound = false;
+                                    
+                                    if (parts.length >= 2) {
+                                        const twoWordCommand = `${parts[0]} ${parts[1]}`.toLowerCase();
+                                        if (commands[twoWordCommand]) { 
+                                            const result = commands[twoWordCommand].execute(parts.slice(2));
+                                            addOutput(result);
+                                            commandFound = true;
+                                        }
+                                    }
+                                    
+                                    if (!commandFound && parts[0]) {
+                                        const command = parts[0].toLowerCase();
+                                        const args = parts.slice(1);
+                                        
+                                        if (commands[command]) {
+                                            const result = commands[command].execute(args);
+                                            addOutput(result);
+                                        } else {
+                                            addOutput(`'${command}' is not recognized as an internal command.`);
+                                        }
+                                    }
+                                };
+                            }
+
+                            commandsToExecute.forEach((cmd, index) => {
+                                setTimeout(() => {
+                                    processCommand(cmd);
+                                    
+                                    if (index === commandsToExecute.length - 1 && noRunOutput) {
+                                        setTimeout(() => {
+                                            processCommand = originalProcessCommand;
+                                        }, 100);
+                                    }
+                                }, index * 10);
+                            });
+                        }
+                        
+                        if (silentExecution) {
+                            return '';
+                        }
+                        return '';
+                    }
                     
                     let hideOutput = false;
                     let silentExecution = false;
@@ -1521,6 +1851,7 @@ Syntax:
                             const progressBar = `[${'='.repeat(Math.floor(progress / 5))}${' '.repeat(20 - Math.floor(progress / 5))}] ${progress.toFixed(0)}%`;
                             addOutput(`${progressBar} ${current}`);
                         }
+                        
                         current--;
                         
                         if (current < 0) {
@@ -1585,11 +1916,6 @@ Syntax:
                     if (commandsToExecute.length > 0) {
                         response += `\nWill execute ${commandsToExecute.length} command(s) after countdown`;
                     }
-                    if (hideOutput) {
-                    }
-
-                    if (noRunOutput) {
-                    }
                     
                     return response;
                 }
@@ -1599,15 +1925,17 @@ Syntax:
                 execute: function(args) {
                     if (args.length === 0) {
                         return `Usage: p <html_content>
-            Example: p <strong>Bold</strong> and <em>italic</em> text
-            Example: p <a href='https://example.com'>Click me</a>
-            Example: p <span style='color: red; font-size: 20px;'>Styled text</span>`;
+    Example: p <div style="background: white">hiiii</div>
+    Example: p <a href='https://example.com'>link</a>    <-- these make you leave the terminal, use LINK instead
+    Example: p <span style='color: red; font-size: 20px;'>Styled text</span>
+    
+This, like every other rich display command, works by dynamically creating an HTML element in the terminal.`;
                     }
                     
                     const htmlContent = args.join(' ');
                     
                     const htmlElement = document.createElement('div');
-                    htmlElement.innerHTML = htmlContent;
+                    htmlElement.innerHTML = substituteVariables(htmlContent);
                     htmlElement.style.margin = '5px 0';
                     htmlElement.style.padding = '10px';
                     htmlElement.style.borderRadius = '4px';
@@ -1652,14 +1980,14 @@ Syntax:
             'upper': {
                 description: 'Convert text to uppercase',
                 execute: function(args) {
-                    return args.join(' ').toUpperCase();
+                    return substituteVariables(args.join(' ')).toUpperCase();
                 }
             },
 
             'lower': {
                 description: 'Convert text to lowercase',
                 execute: function(args) {
-                    return args.join(' ').toLowerCase();
+                    return substituteVariables(args.join(' ')).toLowerCase();
                 }
             },
             random: {
@@ -1688,25 +2016,9 @@ Syntax:
                 const outputLine = document.createElement('div');
                 outputLine.className = 'output-line';
                 
-                const currentTheme = localStorage.getItem('terminal-theme');
-                if (currentTheme === 'rainbow') {
-                    const lines = text.split('\n');
-                    lines.forEach((line, lineIndex) => {
-                        if (lineIndex > 0) {
-                            outputLine.appendChild(document.createElement('br'));
-                        }
-                        
-                        for (let i = 0; i < line.length; i++) {
-                            const charSpan = document.createElement('span');
-                            charSpan.className = 'rainbow-char';
-                            charSpan.style.setProperty('--char-index', i + (lineIndex * 100));
-                            charSpan.textContent = line[i];
-                            outputLine.appendChild(charSpan);
-                        }
-                    });
-                } else {
-                    outputLine.textContent = text;
-                }
+                const substitutedText = substituteVariables(text);
+                
+                outputLine.textContent = substitutedText;
                 
                 outputElement.appendChild(outputLine);
                 outputElement.scrollTop = outputElement.scrollHeight;
@@ -1745,6 +2057,30 @@ Syntax:
             if (trimmedInput) {
                 commandHistory.push(trimmedInput);
                 historyIndex = commandHistory.length;
+            }
+        }
+
+        function silentProcessCommand(input) {
+            const trimmedInput = input.trim();
+            const parts = trimmedInput.split(/\s+/);
+        
+            let commandFound = false;
+            
+            if (parts.length >= 2) {
+                const twoWordCommand = `${parts[0]} ${parts[1]}`.toLowerCase();
+                if (commands[twoWordCommand]) {
+                    const result = commands[twoWordCommand].execute(parts.slice(2));
+                    commandFound = true;
+                }
+            }
+    
+            if (!commandFound && parts[0]) {
+                const command = parts[0].toLowerCase();
+                const args = parts.slice(1);
+                
+                if (commands[command]) {
+                    const result = commands[command].execute(args);
+                }
             }
         }
 

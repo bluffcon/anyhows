@@ -105,7 +105,7 @@
 <body>
     <div class="terminal">
         <div class="output" id="output">
-            <div class="output-line">ANYTERMY 0.2 [Substitutes Update]- Anyhows Terminal Service<br>Run FUNCTION WELCOME if you dont know what to do!<br>(c) Anyhows Corporation. All rights reserved.</div>
+            <div class="output-line">ANYTERMY 0.3 [Lazy Update] - Anyhows Terminal Service<br>Run FUNCTION WELCOME if you dont know what to do!<br>(c) Anyhows Corporation. All rights reserved.</div>
         </div>
         <div class="input-line">
             <span class="prompt">$</span>
@@ -744,6 +744,9 @@ const beeSpecies = {
         if (output.includes('%.date%')) {
             output = output.replace(/%.date%/g, new Date().toLocaleDateString());
         }
+        if (output.includes('%.alldate%')) {
+            output = output.replace(/%.alldate%/g, new Date().toString());
+        }
         if (output.includes('%.minutes%')) {
             output = output.replace(/%.minutes%/g, new Date().getMinutes());
         }
@@ -797,7 +800,8 @@ const beeSpecies = {
             cheatcode: {
                 description: 'Shows a cheatcode!!!',
                 execute: function(args) {
-                    return `ea8bj1zLc85d`;
+                    return `ea8bj1zLc85d
+dkhMQEYdc67OtaZZU4fkvT3UoRTUGXnFCSEp2QMA`;
                 }
             },
             help: {
@@ -951,7 +955,8 @@ The above are always shipped with the Anytermy!`;
             date: {
                 description: 'Displays the current date and time',
                 execute: function(args) {
-                    return new Date().toString();
+                    silentProcessCommand('text %.alldate%');
+                    return;
                 }
             },
             matrix: {
@@ -977,7 +982,6 @@ The above are always shipped with the Anytermy!`;
                     }
                 }
             },
-            
             discord: {
                 description: 'Displays the Anyhows Discord invite link',
                 execute: function(args) {
@@ -992,6 +996,12 @@ The above are always shipped with the Anytermy!`;
                     } else {
                         return 'Couldn\'t open the discord link';
                     }
+                }
+            },
+            diamonds: {
+                description: 'Displays ways to obtain diamonds',
+                execute: function(args) {
+                    silentProcessCommand(`countdown 0 -norun -silent echo Kill Deathword -and echo Fishing treasure -and echo Structure chests -and echo Royal Jelly + Glowworm Silk -and echo Royal Jelly + Carbon -and echo Kill Elder Guardian boss -and echo Crush Heart of the Sea`);
                 }
             },
             theme: {
@@ -1993,13 +2003,18 @@ This, like every other rich display command, works by dynamically creating an HT
             random: {
                 description: 'Generates a randomized string of specified length',
                 execute: function(args) {
-                    const length = args.length > 0 ? parseInt(args[0]) : 8;
+                    const lengthArg = args.length > 0 ? substituteVariables(args[0]) : '8';
+                    const length = parseInt(lengthArg);
                     
                     if (isNaN(length) || length < 1 || length > 128) {
                         return 'Length must be a positive number not greater than 128';
                     }
                     
-                    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                    let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                    if (args.length > 1) {
+                        chars = substituteVariables(args[1]);
+                    }
+                    
                     let result = '';
                     
                     for (let i = 0; i < length; i++) {
@@ -2008,7 +2023,8 @@ This, like every other rich display command, works by dynamically creating an HT
                     
                     return result;
                 }
-            },
+            }
+
         };
 
         function addOutput(text) {
